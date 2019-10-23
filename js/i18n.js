@@ -1,27 +1,27 @@
 function update_captions(){
   if(window.innerWidth < 520){
-    captions = ["Coffee", "Panini",
-      "Idea", "Code",
-      "<span style='display:inline-block;line-height:11px;vertical-align:middle'>Deep Learning</span>",
-      "<span style='font-size:11px;display:inline-block;line-height:11px;vertical-align:middle'>See Supervisor</span>",
-      "<span style='font-size:11px'>Experiment</span>", "Paper",
-      "<span style='font-size:11px'>Conference</span>", "Viva", "PhD",
-      "<span style='font-size:smaller'>Postdoc</span>",
-      "<span style='font-size:smaller'>Lecturer</span>", "Reader", "Prof."];
+    captions = ["Janitor", "Officer",
+      "Researcher", "Guard",
+      "<span style='display:inline-block;line-height:11px;vertical-align:middle'>Security Officer</span>",
+      "<span style='font-size:11px;display:inline-block;line-height:11px;vertical-align:middle'>Research Supervisor</span>",
+      "<span style='font-size:smaller'>Containment Specialist</span>", "Cadet",
+      "<span style='font-size:11px'>Field Agent</span>", "MTF", "Commander",
+      "<span style='font-size:smaller'>Zone Manager</span>",
+      "<span style='font-size:smaller'>Facility Manager</span>", "<span style='font-size:smaller'>Site Director</span>", "O5"];
     captions_rel = ["<span style='font-size:9px;'>Relationship</span>",
       "<span style='font-size:11px;'>Break-up</span>"];
   }
   else{
-    captions = ["Coffee", "Panini",
-      "Idea", "Code",
-      "<span style='font-size:24px;display:inline-block;line-height:24px;vertical-align:middle'>Deep Learning</span>",
-      "<span style='font-size:20px;display:inline-block;line-height:20px;vertical-align:middle'>See Supervisor</span>",
-      "<span style='font-size:20px'>Experiment</span>", "Paper",
-      "<span style='font-size:20px'>Conference</span>", "Viva", "PhD",
-      "<span style='font-size:smaller'>Postdoc</span>",
-      "<span style='font-size:smaller'>Lecturer</span>", "Reader", "Prof."];
-    captions_rel = ["<span style='font-size:15px;'>Relationship</span>",
-      "<span style='font-size:20px;'>Break-up</span>"];
+    captions = ["Janitor", "Officer",
+      "Researcher", "Guard",
+      "<span style='font-size:24px;display:inline-block;line-height:24px;vertical-align:middle'>Security Officer</span>",
+      "<span style='font-size:20px;display:inline-block;line-height:20px;vertical-align:middle'>Research Supervisor</span>",
+      "<span style='font-size:20px'>Containment Specialist</span>", "Cadet",
+      "<span style='font-size:20px'>Field Agent</span>", "MTF", "Commander",
+      "<span style='font-size:smaller'>Zone Manager</span>",
+      "<span style='font-size:smaller'>Facility Manager</span>", "<span style='font-size:smaller'>Site Director</span>", "O5"];
+    captions_rel = ["<span style='font-size:15px;'>new SCP</span>",
+      "<span style='font-size:11px;'>containment break</span>"];
   }
 }
 
@@ -71,17 +71,17 @@ function play_in_english(){
   update_captions();
   window.addEventListener('resize', update_captions, true);
 
-  caption_garbage = "<span style='font-size:smaller'>Garbage</span>";
+  caption_garbage = "<span style='font-size:smaller'>D-class</span>";
   window.game.actuate();
 
-  game_title = "PhD";
-  game_alt_title = "Love";
+  game_title = "O5";
+  game_alt_title = "Research";
   result_msg = "You got a ";
   var titleElem = document.getElementById('title');
-  if(titleElem.textContent != "Love") titleElem.textContent = game_title;
+  if(titleElem.textContent != "Research") titleElem.textContent = game_title;
   document.querySelector('.restart-button').textContent = "Drop out";
   document.querySelector('.retry-button').textContent = "Try again";
-  document.querySelector('.game-explanation').innerHTML = "<strong class='important'>How to play:</strong> Use your <strong>arrow keys</strong> to move the bricks. When two bricks of the same type touch, they <strong>merge into one!</strong><br>However, your ideas and experiments may not always work &mdash; they may produce the sticky <strong>garbage</strong>, which is resistant to moves. Two garbage bricks vanish when they touch. You will stop producing garbage after getting a <strong>paper</strong> (except for one more piece to help you eliminate any existing garbage).<br>A <strong>relationship</strong> upgrades any brick it touches for the first time. The brick shows the number of times you have benefited from it. When the 10-sec relationship ends, it will become a <strong>break-up</strong> (or garbage if you didn't use it), which downgrades bricks until you have repaid the benefits.";
+  document.querySelector('.game-explanation').innerHTML = "<strong class='important'>How to play:</strong> Use your <strong>arrow keys</strong> to move the bricks. When two bricks of the same type touch, they <strong>merge into one!</strong><br>However, your efforts may not always work &mdash; you may become a <strong>D-class</strong>, which is resistant to moves. Two D-class bricks vanish when they touch. You will stop producing D-class after getting a <strong>█████</strong> (except for one more piece to help you eliminate any existing D-class).<br>A <strong>new SCP</strong> upgrades any brick it touches for the first time. The brick shows the number of times you have benefited from it. When the 10-sec research ends, it will become a <strong>containment breach</strong> (or D-class if you didn't use it), which downgrades bricks until you have repaid the benefits.";
 
   if(span_en) span_en.parentNode.removeChild(span_en);
   create_switch_zh();
@@ -119,18 +119,18 @@ function determine_zh_var(){
 }
 
 function use_simplified(){
-  captions = ["Coffee", "Panini",
-    "想法", "代码", "<span style='display:inline-block;line-height:30px;vertical-align:middle'>深度<br>学習</span>", "见导师",
-    "实验", "Paper", "会议", "答辩", "PhD",
-    "薄厚", "僵尸", "Reader", "叫兽"];
-  captions_rel = ["恋爱", "分手"];
-  caption_garbage = "垃圾";
-  game_alt_title = "爱";
+  captions = ["清洁工", "职员",
+    "研究员", "保安", "<span style='display:inline-block;line-height:30px;vertical-align:middle'>安全<br>人员</span>", "高级研究员",
+    "收容专家", "新兵", "外勤", "MTF", "指挥官",
+    "区域总管", "站点管理", "站点主管", "O5"];
+  captions_rel = ["新SCP", "收容失效"];
+  caption_garbage = "D级";
+  game_alt_title = "研究";
   window.game.actuate();
 
-  document.querySelector('.restart-button').textContent = "退学";
+  document.querySelector('.restart-button').textContent = "离职";
   document.querySelector('.retry-button').textContent = "善";
-  document.querySelector('.game-explanation').innerHTML = "<strong class='important'>玩法:</strong> 使用方向键搬砖. 当两块相同的砖碰在一起时, <strong>它们会组成一块更好的砖</strong>! <br>但是, 你的想法和实验也可能只是产生<strong>垃圾</strong>. 黏着的垃圾会阻碍砖块的移动, 直到被别的垃圾击中而消失. 你得到 <strong>paper</strong> 以后便不会再产生垃圾, 最多再来一块帮你清除别的垃圾.<br><strong>恋爱</strong>砖触碰任何砖都能使其升级, 但一块砖只可享受一次. 恋爱砖上会显示你使用它的次数; 10 秒后它会变成<strong>分手</strong>砖, 触碰任何砖都能使其降级, 以此来偿还之前使用的次数.";
+  document.querySelector('.game-explanation').innerHTML = "<strong class='important'>玩法:</strong> 使用方向键搬砖. 当两块相同的砖碰在一起时, <strong>它们会组成一块更好的砖</strong>! <br>但是, 你的努力也可能只是变成<strong>D级</strong>. D级会阻碍砖块的移动, 直到被别的D级击中而消失. 你得到 <strong>█████</strong> 以后便不会再产生D级, 最多再来一块帮你清除别的D级.<br><strong>新SCP</strong>砖触碰任何砖都能使其升级, 但一块砖只可享受一次. 砖上会显示你使用它的次数; 10 秒后它会变成<strong>收容失效</strong>砖, 触碰任何砖都能使其降级, 以此来偿还之前使用的次数.";
 }
 
 function use_traditional(){
@@ -152,7 +152,7 @@ function use_traditional(){
 
 function play_in_chinese(){
   window.removeEventListener('resize', update_captions, true);
-  game_title = "磗士";
+  game_title = "O5";
   result_msg = "你得到了";
   var titleElem = document.getElementById('title');
   if(titleElem.textContent != "Love") titleElem.textContent = game_title;
