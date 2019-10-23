@@ -1,7 +1,7 @@
-# PhD 2048
+# SCP 2048(orginal PhD 2048)
 A fork of [2048](https://github.com/gabrielecirulli/2048) for PhD students. (Yes, you can create a professor's 2048 in which two students become a garbage tile.)
 
-Made just for procrastination. [Play it here!](https://ymfa.github.io/phd-2048/)
+Made just for procrastination. [Play it here!](https://az123zx123.github.io/phd-2048/)
 
 ### Forking
 Feel free to fork and create your own version of 2048. A few suggestions on what to fiddle with:
