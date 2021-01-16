@@ -120,7 +120,7 @@ function determine_zh_var(){
 
 function use_simplified(){
   captions = ["录取", "PMP",
-    "选课", "走堂", "食assign", "考试",
+    "选课", "走堂", "assign", "考试",
     "上庄", "结sem", "组家长", "UROP", "交换",
     "实习", "申请", "offer", "毕业"];
   captions_rel = ["出pool", "回pool"];
@@ -135,7 +135,7 @@ function use_simplified(){
 
 function use_traditional(){
   captions = ["錄取", "PMP",
-    "選課", "走堂", "食assign", "考試",
+    "選課", "走堂", "assign", "考試",
     "上莊", "結sem", "組家長", "UROP", "交換",
     "實習", "申請", "offer", "畢業"];
   captions_rel = ["出pool", "回pool"];
