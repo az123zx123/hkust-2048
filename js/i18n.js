@@ -1,27 +1,27 @@
 function update_captions(){
   if(window.innerWidth < 520){
-    captions = ["Janitor", "Officer",
-      "Researcher", "Guard",
-      "<span style='display:inline-block;line-height:11px;vertical-align:middle'>Security Officer</span>",
-      "<span style='font-size:11px;display:inline-block;line-height:11px;vertical-align:middle'>Research Supervisor</span>",
-      "<span style='font-size:smaller'>Containment Specialist</span>", "Cadet",
-      "<span style='font-size:11px'>Field Agent</span>", "MTF", "Commander",
-      "<span style='font-size:smaller'>Zone Manager</span>",
-      "<span style='font-size:smaller'>Facility Manager</span>", "<span style='font-size:smaller'>Site Director</span>", "O5"];
+    captions = ["admit", "PMP",
+      "enroll", "lecture",
+      "assign",
+      "exam",
+      "exco", "final",
+      "group", "UROP", "exchange",
+      "intern",
+      "apply", "offer", "graduate"];
     captions_rel = ["<span style='font-size:9px;'>Relationship</span>",
       "<span style='font-size:11px;'>Break-up</span>"];
   }
   else{
-    captions = ["Janitor", "Officer",
-      "Researcher", "Guard",
-      "<span style='font-size:24px;display:inline-block;line-height:24px;vertical-align:middle'>Security Officer</span>",
-      "<span style='font-size:20px;display:inline-block;line-height:20px;vertical-align:middle'>Research Supervisor</span>",
-      "<span style='font-size:20px'>Containment Specialist</span>", "Cadet",
-      "<span style='font-size:20px'>Field Agent</span>", "MTF", "Commander",
-      "<span style='font-size:smaller'>Zone Manager</span>",
-      "<span style='font-size:smaller'>Facility Manager</span>", "<span style='font-size:smaller'>Site Director</span>", "O5"];
-    captions_rel = ["<span style='font-size:15px;'>new SCP</span>",
-      "<span style='font-size:11px;'>containment break</span>"];
+    captions = ["admit", "PMP",
+      "enroll", "lecture",
+      "assign",
+      "exam",
+      "exco", "final",
+      "group", "UROP", "exchange",
+      "intern",
+      "apply", "offer", "graduate"];
+    captions_rel = ["<span style='font-size:9px;'>Relationship</span>",
+      "<span style='font-size:11px;'>Break-up</span>"];
   }
 }
 
@@ -119,28 +119,28 @@ function determine_zh_var(){
 }
 
 function use_simplified(){
-  captions = ["清洁工", "职员",
-    "研究员", "保安", "<span style='display:inline-block;line-height:30px;vertical-align:middle'>安全<br>人员</span>", "高级研究员",
-    "收容专家", "新兵", "外勤", "MTF", "指挥官",
-    "区域总管", "站点管理", "站点主管", "O5"];
-  captions_rel = ["新SCP", "收容失效"];
-  caption_garbage = "D级";
-  game_alt_title = "研究";
+  captions = ["录取", "PMP",
+    "选课", "走堂", "食assign", "考试",
+    "上庄", "结sem", "组家长", "UROP", "交换",
+    "实习", "申请", "offer", "毕业"];
+  captions_rel = ["出pool", "回pool"];
+  caption_garbage = "烂龟";
+  game_alt_title = "学习";
   window.game.actuate();
 
-  document.querySelector('.restart-button').textContent = "离职";
+  document.querySelector('.restart-button').textContent = "quitU";
   document.querySelector('.retry-button').textContent = "善";
   document.querySelector('.game-explanation').innerHTML = "<strong class='important'>玩法:</strong> 使用方向键搬砖. 当两块相同的砖碰在一起时, <strong>它们会组成一块更好的砖</strong>! <br>但是, 你的努力也可能只是变成<strong>D级</strong>. D级会阻碍砖块的移动, 直到被别的D级击中而消失. 你得到 <strong>█████</strong> 以后便不会再产生D级, 最多再来一块帮你清除别的D级.<br><strong>新SCP</strong>砖触碰任何砖都能使其升级, 但一块砖只可享受一次. 砖上会显示你使用它的次数; 10 秒后它会变成<strong>收容失效</strong>砖, 触碰任何砖都能使其降级, 以此来偿还之前使用的次数.";
 }
 
 function use_traditional(){
-  captions = ["Coffee", "Panini",
-    "想法", "原始碼", "<span style='display:inline-block;line-height:30px;vertical-align:middle'>深度<br>學習</span>", "見導師",
-    "實驗", "Paper", "會議", "答辯", "PhD",
-    "薄厚", "老屍", "Reader", "叫獸"];
-  captions_rel = ["戀愛", "分手"];
-  caption_garbage = "垃圾";
-  game_alt_title = "愛";
+  captions = ["錄取", "PMP",
+    "選課", "走堂", "食assign", "考試",
+    "上莊", "結sem", "組家長", "UROP", "交換",
+    "實習", "申請", "offer", "畢業"];
+  captions_rel = ["出pool", "回pool"];
+  caption_garbage = "爛龜";
+  game_alt_title = "學習";
   window.game.actuate();
 
   document.querySelector('.restart-button').textContent = "退學";
@@ -152,7 +152,7 @@ function use_traditional(){
 
 function play_in_chinese(){
   window.removeEventListener('resize', update_captions, true);
-  game_title = "O5";
+  game_title = "First Honor";
   result_msg = "你得到了";
   var titleElem = document.getElementById('title');
   if(titleElem.textContent != "Love") titleElem.textContent = game_title;
