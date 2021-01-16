@@ -201,7 +201,7 @@ GameManager.prototype.move = function (direction) {
             if (next.benefitedFrom != self.relTime) {
               next.value *= 2;
               if (next.value > self.maxTile) self.maxTile = next.value;
-              if (next.value >= 2048) self.won = true;
+              if (next.value >= 32768) self.won = true;
               next.benefitedFrom = self.relTime;
               self.karma++;
               moved = true;
@@ -233,7 +233,7 @@ GameManager.prototype.move = function (direction) {
             self.grid.insertTile(merged);
             self.score += merged.value;
             if (merged.value > self.maxTile) self.maxTile = merged.value;
-            if (merged.value === 2048) self.won = true;
+            if (merged.value === 32768) self.won = true;
           }
           else {
             self.grid.removeTile(next);
