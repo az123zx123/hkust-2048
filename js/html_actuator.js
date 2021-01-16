@@ -150,7 +150,7 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 
 HTMLActuator.prototype.message = function (ended) {
   var type    = ended ? "game-won" : "game-over";
-  var message = window.game.won ? result_msg + "PhD!" : result_msg + "<abbr title='Certificate of Postgraduate Studies'>CPGS</abbr>!";
+  var message = window.game.won ? result_msg + "graduate!" : result_msg + "<abbr title='Hong Kong University of Science and Technology'>HKUST</abbr>!";
   if(!window.game.won) {
     if(window.game.maxTile >= 1024) message = "One step away!";
     else if(window.game.maxTile >= 512) message = "Not bad!";
@@ -182,7 +182,7 @@ HTMLActuator.prototype.refreshRel = function (remainingTime) {
   }
   else{
     this.titleBar.textContent = game_title;
-    this.statusBar.textContent = "Move the bricks to complete your PhD.";
+    this.statusBar.textContent = "Move the bricks to complete your HKUST career.";
     this.progressBar.textContent = "";
     this.progressBar.style.display = "none";
     this.progressBar.style.width = "0";
