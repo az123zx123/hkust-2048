@@ -71,10 +71,10 @@ function play_in_english(){
   update_captions();
   window.addEventListener('resize', update_captions, true);
 
-  caption_garbage = "<span style='font-size:smaller'>bad grade</span>";
+  caption_garbage = "<span style='font-size:smaller'>bad-grade</span>";
   window.game.actuate();
 
-  game_title = "HKUST";
+  game_title = "First Honor";
   game_alt_title = "Research";
   result_msg = "You got a ";
   var titleElem = document.getElementById('title');
