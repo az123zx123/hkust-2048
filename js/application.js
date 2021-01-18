@@ -3,7 +3,7 @@ window.requestAnimationFrame(function () {
   window.game = new GameManager(4, KeyboardInputManager, HTMLActuator, LocalStorageManager);
   var lang_pref = window.game.storageManager.storage.getItem('lang');
   if(lang_pref == 'en') play_in_english();
-  else if(lang_pref == 'zh') play_in_chinese();
+  else if(lang_pref == 'zh-Hans') play_in_traditional();
   else {
     var nav_langs = navigator.languages;
     var require_english = true;

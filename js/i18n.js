@@ -28,6 +28,7 @@ function update_captions(){
 var span_en;
 
 function create_switch_en(){
+  console.log("create_switch_en");
   span_en = document.createElement('div');
   span_en.style.position = "absolute";
   span_en.style.top = "0";
@@ -41,7 +42,7 @@ function create_switch_en(){
   span_en.style.color = "white";
   span_en.style.cursor = "pointer";
   span_en.onclick = play_in_english;
-  span_en.textContent = "🇬🇧 Switch to English";
+  span_en.textContent = "English";
   var container = document.querySelector('.container');
   container.insertBefore(span_en, container.firstChild);
 }
@@ -49,6 +50,7 @@ function create_switch_en(){
 var span_zh;
 
 function create_switch_zh(){
+  console.log("create_switch_zh");
   span_zh = document.createElement('div');
   span_zh.style.position = "absolute";
   span_zh.style.top = "0";
@@ -62,12 +64,33 @@ function create_switch_zh(){
   span_zh.style.color = "white";
   span_zh.style.cursor = "pointer";
   span_zh.onclick = play_in_chinese;
-  span_zh.textContent = "中文版";
+  span_zh.textContent = "简体";
   var container = document.querySelector('.container');
   container.insertBefore(span_zh, container.firstChild);
 }
 
+function create_switch_traditional(){
+  console.log("create_switch_traditional");
+  span_Hans = document.createElement('div');
+  span_Hans.style.position = "absolute";
+  span_Hans.style.top = "0";
+  if(window.innerWidth < 520)
+    span_Hans.style.fontSize = "10px";
+  else
+    span_Hans.style.fontSize = "small";
+  span_Hans.style.backgroundColor = "#8f7a66";
+  span_Hans.style.borderRadius = "0 0 3px 3px";
+  span_Hans.style.padding = "3px 10px";
+  span_Hans.style.color = "white";
+  span_Hans.style.cursor = "pointer";
+  span_Hans.onclick = play_in_traditional;
+  span_Hans.textContent = "繁體";
+  var container = document.querySelector('.container');
+  container.insertBefore(span_Hans, container.firstChild);
+}
+
 function play_in_english(){
+  console.log("play_in_english");
   update_captions();
   window.addEventListener('resize', update_captions, true);
 
@@ -79,7 +102,7 @@ function play_in_english(){
   result_msg = "You got a ";
   var titleElem = document.getElementById('title');
   if(titleElem.textContent != "Research") titleElem.textContent = game_title;
-  document.querySelector('.restart-button').textContent = "Drop out";
+  document.querySelector('.restart-button').textContent = "quitU";
   document.querySelector('.retry-button').textContent = "Try again";
   document.querySelector('.game-explanation').innerHTML = "<strong class='important'>How to play:</strong> Use your <strong>arrow keys</strong> to move the bricks. When two bricks of the same type touch, they <strong>merge into one!</strong><br>However, your efforts may not always work &mdash; you may get a <strong>bad grade</strong>, which is resistant to moves. Two bad grade bricks vanish when they touch. You will stop producing bad grade after finishing a <strong>final</strong> (except for one more piece to help you eliminate any existing bad grade).<br>A <strong>new relationship</strong> upgrades any brick it touches for the first time. The brick shows the number of times you have benefited from it. When the 10-sec research ends, it will become a <strong>break-up</strong> (or bad grade if you didn't use it), which downgrades bricks until you have repaid the benefits.";
 
@@ -143,24 +166,42 @@ function use_traditional(){
   game_alt_title = "學習";
   window.game.actuate();
 
-  document.querySelector('.restart-button').textContent = "退學";
+  document.querySelector('.restart-button').textContent = "quitU";
   document.querySelector('.retry-button').textContent = "善";
   document.querySelector('.game-explanation').innerHTML = "<strong class='important'>玩法：</strong>用方向鍵搬磚。當兩塊相同的磚碰在一起時，<strong>它們會併成一塊更好的磚</strong>！<br>但是，你的想法和實驗可能只是產生<strong>爛龜</strong>而已。黏在地上的垃圾會阻礙磚塊移動，直到被別的爛龜擊中而消失。你<strong>結sem</strong> 以後便不會再產生爛龜，最多再出一塊幫你清除場上剩下的爛龜。<br><strong>出pool</strong>磚觸碰任何磚都能使其升級，但一塊磚只得升級一次。出pool磚上會顯示你用它的次數。10 秒後它會變成<strong>回pool</strong>磚，觸碰任何磚都能使其降級，以此來償還之前使用的次數。";
 
   document.body.style.fontFamily = '"Clear Sans", "Helvetica Neue", Arial, "Hiragino Sans CNS", "PingFang TC", "Microsoft JhengHei", "Source Han Sans TC", "Noto Sans CJK TC", sans-serif';
 }
 
+
 function play_in_chinese(){
+  console.log("play_in_chinese");
   window.removeEventListener('resize', update_captions, true);
   game_title = "First Honor";
   result_msg = "你得到了";
   var titleElem = document.getElementById('title');
   if(titleElem.textContent != "Love") titleElem.textContent = game_title;
 
-  if(determine_zh_var() == 'hant') use_traditional();
-  else use_simplified();
+  //if(determine_zh_var() == 'hant') use_traditional();
+  //else use_simplified();
+  use_simplified();
 
   if(span_zh) span_zh.parentNode.removeChild(span_zh);
-  create_switch_en();
+  create_switch_traditional();
   window.game.storageManager.storage.setItem('lang', 'zh');
+}
+
+function play_in_traditional(){
+  console.log("play_in_traditional");
+  window.removeEventListener('resize', update_captions, true);
+  game_title = "First Honor";
+  result_msg = "你得到了";
+  var titleElem = document.getElementById('title');
+  if(titleElem.textContent != "Love") titleElem.textContent = game_title;
+
+  use_traditional();
+
+  if(span_Hans) span_Hans.parentNode.removeChild(span_Hans);
+  create_switch_en();
+  window.game.storageManager.storage.setItem('lang', 'Hans');
 }
