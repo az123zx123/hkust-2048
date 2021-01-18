@@ -71,7 +71,7 @@ function play_in_english(){
   update_captions();
   window.addEventListener('resize', update_captions, true);
 
-  caption_garbage = "<span style='font-size:smaller'>bad-grade</span>";
+  caption_garbage = "<span style='font-size:9px;'>bad-grade</span>";
   window.game.actuate();
 
   game_title = "First Honor";
