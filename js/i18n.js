@@ -148,7 +148,7 @@ function use_simplified(){
     "实习", "申请", "offer", "毕业"];
   captions_rel = ["出pool", "回pool"];
   caption_garbage = "烂龟";
-  game_alt_title = "学习";
+  game_alt_title = "学";
   window.game.actuate();
 
   document.querySelector('.restart-button').textContent = "quitU";
@@ -163,7 +163,7 @@ function use_traditional(){
     "實習", "申請", "offer", "畢業"];
   captions_rel = ["出pool", "回pool"];
   caption_garbage = "爛龜";
-  game_alt_title = "學習";
+  game_alt_title = "學";
   window.game.actuate();
 
   document.querySelector('.restart-button').textContent = "quitU";
