@@ -1,5 +1,5 @@
-# SCP 2048(orginal PhD 2048)
-A fork of [2048](https://github.com/gabrielecirulli/2048) for PhD students. (Yes, you can create a professor's 2048 in which two students become a garbage tile.)
+# HKUST 2048(orginal PhD 2048)
+A fork of [2048](https://github.com/gabrielecirulli/2048) for PhD students.
 
 Made just for procrastination. [Play it here!](https://az123zx123.github.io/phd-2048/)
 
@@ -20,4 +20,4 @@ Therefore you should use the `master` branch rather than `gh-pages`, and add you
 - I have to make changes directly to `main.css` instead of `main.scss`, because compiling the original `main.scss` does not reproduce the original `main.css`.
 
 ### License
-PhD 2048 is licensed under the [GNU General Public License](https://github.com/ymfa/phd-2048/blob/master/LICENSE.txt).
+HKUST 2048 is licensed under the [GNU General Public License](https://github.com/ymfa/phd-2048/blob/master/LICENSE.txt).
