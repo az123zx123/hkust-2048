@@ -150,7 +150,7 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 
 HTMLActuator.prototype.message = function (ended) {
   var type    = ended ? "game-won" : "game-over";
-  var message = window.game.won ? result_msg + "graduate!" : result_msg + "<abbr title='Hong Kong University of Science and Technology'>HKUST</abbr>!";
+  var message = window.game.won ? result_msg + "graduate!" : result_msg + "quitU";
   if(!window.game.won) {
     if(window.game.maxTile >= 1024) message = "One step away!";
     else if(window.game.maxTile >= 512) message = "Not bad!";
